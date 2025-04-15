@@ -1,6 +1,7 @@
 using System;
 namespace Ucu.Poo.GameOfLife;
 
+
 public class Board
 {
     private bool[,] gameBoard = new bool[,]
