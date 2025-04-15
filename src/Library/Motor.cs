@@ -2,50 +2,32 @@ namespace Library;
 
 public class Motor
 {
-    public static Board Avanzar(Board gameBoard)
+    public static Board CreateNextGeneration(Board currentBoard)
     {
-        Board cloneboard = new Board(gameBoard.Width(),gameBoard.Height());
-        for (int x = 0; x < gameBoard.Width()-1; x++)
+        Board nextBoard = new Board(currentBoard.Width, currentBoard.Height);
+
+        for (int x = 0; x < currentBoard.Width; x++)
         {
-            for (int y = 0; y < gameBoard.Height()-1; y++)
+            for (int y = 0; y < currentBoard.Height; y++)
             {
-                int aliveNeighbors = 0;
-                for (int i = x - 1; i <= x + 1; i++)
-                {
-                    for (int j = y - 1; j <= y + 1; j++)
-                    {
-                        if (i >= 0 && i < gameBoard.Width() && j >= 0 && j < gameBoard.Height() && gameBoard.GetValue(i, j))
-                        {
-                            aliveNeighbors++;
-                        }
-                    }
-                }
+                int aliveNeighbors = currentBoard.CountAliveNeighbors(x, y);
+                bool isAlive = currentBoard.GetCell(x, y);
 
-                if (gameBoard.GetValue(x, y))
+                if (isAlive && (aliveNeighbors < 2 || aliveNeighbors > 3))
                 {
-                    aliveNeighbors--;
+                    nextBoard.SetCell(x, y, false);
                 }
-
-                if (gameBoard.GetValue(x, y) && aliveNeighbors < 2)
+                else if (!isAlive && aliveNeighbors == 3)
                 {
-                    cloneboard.SetValue(x, y, false);
-                }
-                else if (gameBoard.GetValue(x, y) && aliveNeighbors > 3)
-                {
-                    cloneboard.SetValue(x,y, false);
-                }
-                else if (!gameBoard.GetValue(x, y) && aliveNeighbors == 3)
-                {
-                    cloneboard.SetValue(x, y, true);
+                    nextBoard.SetCell(x, y, true);
                 }
                 else
                 {
-                    cloneboard.SetValue(x, y, gameBoard.GetValue(x, y));
+                    nextBoard.SetCell(x, y, isAlive);
                 }
             }
         }
 
-        gameBoard = cloneboard;
-        return gameBoard;
+        return nextBoard;
     }
 }
