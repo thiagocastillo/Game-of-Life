@@ -33,22 +33,18 @@ public class Board
                 }
                 if (gameBoard[x,y] && aliveNeighbors < 2)
                 {
-                    //Celula muere por baja población
                     cloneboard[x,y] = false;
                 }
                 else if (gameBoard[x,y] && aliveNeighbors > 3)
                 {
-                    //Celula muere por sobrepoblación
                     cloneboard[x,y] = false;
                 }
                 else if (!gameBoard[x,y] && aliveNeighbors == 3)
                 {
-                    //Celula nace por reproducción
                     cloneboard[x,y] = true;
                 }
                 else
                 {
-                    //Celula mantiene el estado que tenía
                     cloneboard[x,y] = gameBoard[x,y];
                 }
             }
