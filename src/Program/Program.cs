@@ -8,4 +8,4 @@ namespace Ucu.Poo.GameOfLife
             Console.WriteLine("Hello World!");
         }
     }
-}
+
