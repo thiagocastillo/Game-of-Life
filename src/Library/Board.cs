@@ -1,7 +1,6 @@
 using System;
-
-namespace Ucu.Poo.GameOfLife;
-
+//namespace Ucu.Poo.GameOfLife;
+namespace Library;
 public class Board
 {
     private bool[,] cells;
