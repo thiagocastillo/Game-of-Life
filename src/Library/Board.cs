@@ -1,4 +1,4 @@
-using System;
+//using System;
 //namespace Ucu.Poo.GameOfLife;
 namespace Library;
 public class Board
