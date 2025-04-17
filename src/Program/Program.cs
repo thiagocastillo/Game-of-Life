@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Ucu.Poo.GameOfLife
 {
     class Program
@@ -10,3 +9,4 @@ namespace Ucu.Poo.GameOfLife
         }
     }
 }
+

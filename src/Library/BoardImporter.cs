@@ -1,6 +1,5 @@
 using System.IO;
 namespace Library;
-
 public class BoardImporter
 {
     public Board LoadBoardFromTxt(string filePath)
@@ -27,7 +26,6 @@ public class BoardImporter
                 }
             }
         }
-        
         return board;
     }
 }

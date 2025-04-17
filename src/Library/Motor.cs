@@ -1,5 +1,4 @@
 namespace Library;
-
 public class Motor
 {
     public static Board CreateNextGeneration(Board currentBoard)
@@ -27,7 +26,6 @@ public class Motor
                 }
             }
         }
-
         return nextBoard;
     }
 }

@@ -1,9 +1,6 @@
 using System;
+namespace Library;
 
-namespace Library
-{
-    
-}
 public class Board
 {
     private bool[,] cells;
@@ -18,6 +15,8 @@ public class Board
     }
     public Board(int anchoBoard, int largoBoard)
     {
+        Width = anchoBoard;
+        Height = largoBoard;
         cells = new bool[anchoBoard, largoBoard];
     }
     
