@@ -7,10 +7,14 @@ namespace Library
 public class Board
 {
     private bool[,] cells;
+    
+    public int Width { get; private set; }
+    public int Height { get; private set; }
+    
     public void TamañoBoard()
     {
-        int anchoBoard = cells.GetLength(1);
-        int largoBoard = cells.GetLength(0);
+        Width = cells.GetLength(1);
+        Height = cells.GetLength(0);
     }
     public Board(int anchoBoard, int largoBoard)
     {
