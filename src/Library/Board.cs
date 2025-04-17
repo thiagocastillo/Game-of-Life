@@ -1,7 +1,9 @@
 using System;
 
-namespace Ucu.Poo.GameOfLife;
-
+namespace Library
+{
+    
+}
 public class Board
 {
     private bool[,] cells;
@@ -14,12 +16,13 @@ public class Board
     {
         cells = new bool[anchoBoard, largoBoard];
     }
-    public bool GetValor(int x, int y)
+    
+    public bool GetCell(int x, int y)
     {
         return cells[x, y];
     }
 
-    public void SetValor(int x, int y, bool valor)
+    public void SetCell(int x, int y, bool valor)
     {
         cells[x, y] = valor;
     }
