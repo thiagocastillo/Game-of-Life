@@ -8,12 +8,7 @@ namespace Library
         public Board LoadBoardFromTxt(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
-
-            if (lines.Length == 0)
-            {
-                throw new Exception("The board file is empty.");
-            }
-
+            
             int rows = lines.Length;
             int cols = lines[0].Trim().Length;
 
