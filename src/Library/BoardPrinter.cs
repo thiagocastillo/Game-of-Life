@@ -1,3 +1,7 @@
+using System;
+using System.Text;
+using System.Threading;
+
 namespace Library;
 
 public class BoardPrinter
@@ -29,15 +33,11 @@ public class BoardPrinter
                         s.Append("___");
                     }
                 }
-
                 s.Append("\n");
             }
-
             Console.WriteLine(s.ToString());
 
             Thread.Sleep(300);
         }
     }
 }
-
-
