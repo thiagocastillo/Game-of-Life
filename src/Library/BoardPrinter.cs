@@ -36,6 +36,7 @@ public class BoardPrinter
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
+            board = Motor.Avanzar(board);
             Thread.Sleep(300);
         }
     }

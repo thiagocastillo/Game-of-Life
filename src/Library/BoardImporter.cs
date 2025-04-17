@@ -1,31 +1,32 @@
+using System;
 using System.IO;
-namespace Library;
-public class BoardImporter
+
+namespace Library
 {
-    public Board LoadBoardFromTxt(string filePath)
+    public class BoardImporter
     {
-        string url = filePath;
-        string content = File.ReadAllText(url);
-        string [] lines = content.Split('\n');
-        int rows = lines.Length;
-        int cols = lines[0].Length;
-        
-        Board board = new Board(rows, cols);
-        
-        for (int i = 0; i < rows; i++)
+        public Board LoadBoardFromTxt(string filePath)
         {
-            for (int j = 0; j < cols; j++)
+            string[] lines = File.ReadAllLines(filePath);
+
+            if (lines.Length == 0)
             {
-                if (lines[i][j] == '1')
-                {
-                    board.SetCell(i, j, true);
-                }
-                else
-                {
-                    board.SetCell(i, j, false);
-                }
+                throw new Exception("The board file is empty.");
             }
+
+            int rows = lines.Length;
+            int cols = lines[0].Trim().Length;
+
+            Board board = new Board(cols, rows); 
+            for (int i = 0; i < rows; i++)
+            {
+                string line = lines[i].Trim();
+                for (int j = 0; j < cols; j++)
+                {
+                    board.SetCell(j, i, line[j] == '1'); }
+            }
+
+            return board;
         }
-        return board;
     }
 }
