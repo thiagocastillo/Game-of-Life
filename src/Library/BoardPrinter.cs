@@ -1,7 +1,10 @@
 using System;
 using System.Text;
 using System.Threading;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e355f5cb7541a669a16d7976b36b105d84d17fda
 namespace Library;
 
 public class BoardPrinter 
@@ -36,8 +39,8 @@ public class BoardPrinter
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
-
-            Thread.Sleep(300);
+            board = Motor.Avanzar(board);
+            Thread.Sleep(300); 
         }
     }
 }
