@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Library;
 
-public class BoardPrinter
+public class BoardPrinter 
 {
     private Board board;
 
