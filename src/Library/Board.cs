@@ -1,4 +1,3 @@
-using System;
 namespace Library;
 
 public class Board
@@ -32,6 +31,31 @@ public class Board
     public void SetCell(int x, int y, bool valor)
     {
         cells[x, y] = valor;
+    }
+    public int CountAliveNeighbors(int x, int y)
+    {
+        int aliveNeighbors = 0;
+
+        for (int dx = -1; dx <= 1; dx++)
+        {
+            for (int dy = -1; dy <= 1; dy++)
+            {
+                if (dx == 0 && dy == 0) continue; 
+
+                int neighborX = x + dx;
+                int neighborY = y + dy;
+
+                if (neighborX >= 0 && neighborX < Width && neighborY >= 0 && neighborY < Height)
+                {
+                    if (cells[neighborX, neighborY])
+                    {
+                        aliveNeighbors++;
+                    }
+                }
+            }
+        }
+
+        return aliveNeighbors;
     }
 }
     
