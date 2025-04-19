@@ -10,8 +10,11 @@ namespace Ucu.Poo.GameOfLife
         {
             // Crea un objeto de la clase BoardImporter para cargar el archivo board.txt
             BoardImporter fileReader = new BoardImporter();
-            Board pantalla = fileReader.LoadBoardFromTxt("C:\\Users\\Thiago Castillo\\Desktop\\Prog2\\Game-of-Life\\assets\\board.txt"); // Carga el tablero desde el archivo
+            Board pantalla = fileReader.LoadBoardFromTxt("C:\\Users\\SANTIAGO\\Desktop\\UCU\\P2\\EJERCICIO GAME OF LIFE\\Game-of-Life\\assets\\board.txt");
+           //("C:\\Users\\Thiago Castillo\\Desktop\\Prog2\\Game-of-Life\\assets\\board.txt"); // Carga el tablero desde el archivo
+            //("C:\Users\SANTIAGO\Desktop\UCU\P2\EJERCICIO GAME OF LIFE\Game-of-Life\assets\board.txt"); // Carga el tablero desde el archivo
 
+            
             while (true)
             {
                 Console.Clear(); // Limpia la consola
