@@ -26,7 +26,6 @@ public class Motor
                 }
             }
         }
-
         return newBoard; // Devuelve el nuevo tablero con la siguiente generación
     }
 
@@ -51,7 +50,6 @@ public class Motor
                 }
             }
         }
-
         return count; // Devuelve el número de vecinos vivos
     }
 }
