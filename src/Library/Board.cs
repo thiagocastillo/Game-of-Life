@@ -58,4 +58,3 @@ public class Board
         return aliveNeighbors;
     }
 }
-    
